@@ -1,0 +1,108 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/**********************************-----HEADER-----***************************/
+.logo{
+    background-color: white;
+    text-align:center;
+    padding:10px 0 15px 0;
+}
+.logo img{
+    width: 150px;
+}
+/****Icono de menu****/
+.fa-bars:before{ /*tamaño de icono*/
+    font-size: 30px;
+    cursor: pointer;
+}
+label{    
+    width:50%;
+    display: flex;
+    align-content: center;
+    padding:10px;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+   
+}
+
+#btn-menu { /*para que no aparezca el check*/
+    display: none;
+}
+/****menu***/
+hr{
+    width: 5%;
+    height: 1px;
+    margin: 0 auto;
+    background-color: tomato;
+    border:none;
+}
+ul.menuLista a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size:1rem;   
+}
+ul.menuLista {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /*menu que sale*/
+    list-style: none;
+    text-align: center; 
+    font-family: 'Luckiest Guy', sans-serif;
+}
+.menuLista{ /*Ocultar menu*/
+    display:none;
+}
+#btn-menu:checked~.menuLista {
+   display: inline-block;
+}
+ul.menuLista a:hover {
+    background-color: #F86868;
+}
+
+
+/*********************MODO RECURSIVO**********************/
+@media screen and (min-width: 768px){
+    /********************HEADER***************/
+    body{
+        background-color: firebrick;
+    }
+    .fa-bars:before{ /*tamaño de icono*/
+        font-size: 40px;
+    }
+        
+}
+@media screen and (min-width: 1024px){
+    /********************HEADER***************/
+    body{
+        background-color: gold;
+    }
+    header label.fas{  /*ocultar icono del menu*/  
+        display: none;
+    }
+    ul.menuLista {
+        width: auto;
+        display:inline-block;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+    }
+    ul.menuLista a{
+        color:black;
+        padding:10px 50px 10px 50px;
+    }
+    hr{ 
+        display:none;
+    }
+    .menu{
+        background-color: white;
+       
+    }
+    
+    
+
+}
