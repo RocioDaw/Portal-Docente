@@ -30,9 +30,9 @@
                 <ul class="menuLista">
                     <li><a href="#">INICIO</a></li>
                     <hr>
-                    <li><a href="#quien">NOSOTROS</a></li>
+                    <li><a href="#">NOSOTROS</a></li>
                     <hr>
-                    <li><a href="#proyectos">PORTFOLIO</a></li>
+                    <li><a href="#">PORTFOLIO</a></li>
                     <hr>
                     <li><a href="#">CONTACTO</a></li>
                     <hr>

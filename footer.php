@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Portal Docente</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
     <footer>
         <div class="item1">
             <img src="images/logoFooter.png" alt="">
@@ -47,5 +36,3 @@
 
     </footer>
 
-</body>
-</html>

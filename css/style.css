@@ -61,7 +61,7 @@ ul.menuLista {
    display: inline-block;
 }
 ul.menuLista a:hover {
-    background-color: #F86868;
+    background-color: rgba(205,72,78,1);
 }
 
 /**************************FOOTER********************************/
