@@ -33,7 +33,7 @@ label{
     display: none;
 }
 /****menu***/
-hr{
+.menu hr{
     width: 5%;
     height: 1px;
     margin: 0 auto;
@@ -64,9 +64,64 @@ ul.menuLista a:hover {
     background-color: #F86868;
 }
 
+/**************************FOOTER********************************/
+footer{
+    height: 350px;    
+    background: linear-gradient(190deg, rgba(248,104,104,1) 0%, rgba(205,72,78,1) 15%, rgba(121,9,26,1) 66%, rgba(69,68,68,1) 120%);
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
+    color:white;
+    text-align: center;
+    grid-gap:10px;
+    font-family: 'Luckiest Guy', sans-serif;
+}
+.menuFooterContainer{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+}
+.contactContainer{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    
+}
+/*Contacto del footer (facebook,email,instagram)*/
+.contacto{ /*ocultar texto de los contactos*/
+    display:none;
+}
+footer img{
+    width:120px;
+}
+footer li a{
+    text-decoration: none;
+    color:white;
+}
+footer li{
+    list-style-type: none;
+
+}
+footer li i{
+    font-size: 35px;
+    padding-right: 20px;
+    padding:5px;
+    color:rgba(121,9,26,1);
+    background-color: white;
+    border-radius:20px;
+}
+footer hr{
+    height: 1px;
+    width: 40%;
+    margin:0 auto;
+}
+.item5{
+    font-family: sans-serif;
+}
+
+
+
 
 /*********************MODO RECURSIVO**********************/
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px){ /*TABLET*/
     /********************HEADER***************/
     body{
         background-color: firebrick;
@@ -74,9 +129,16 @@ ul.menuLista a:hover {
     .fa-bars:before{ /*tamaño de icono*/
         font-size: 40px;
     }
+    /********************FOOTER**************/
+    .contacto{ 
+        display:block;
+        font-family: sans-serif;
+        font-size: 15px;
+        padding-top:10px;
+    }
         
 }
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px){/*ORDENADOR*/
     /********************HEADER***************/
     body{
         background-color: gold;
@@ -95,7 +157,7 @@ ul.menuLista a:hover {
         color:black;
         padding:10px 50px 10px 50px;
     }
-    hr{ 
+    .menu hr{ 
         display:none;
     }
     .menu{
@@ -103,6 +165,7 @@ ul.menuLista a:hover {
        
     }
     
-    
+    /*****************FOOTER************************/
+   
 
 }

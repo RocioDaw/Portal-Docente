@@ -20,7 +20,7 @@
            
             <!-- Logo -->
             <div class="logo">
-                <img src="images/logo2.png" alt="">
+                <img src="images/logo.png" alt="">
             </div>
                 
             <!-- Main Navigation -->
