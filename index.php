@@ -9,8 +9,8 @@
         $opcion=$_GET['p'];
     }	   
 	if($opcion=="inicio"){	
-		$pagina="inicio.php";
-	}
+        include("inicio.php");	
+    }
 	if($opcion=="noticias" ){	
 	  	$pagina="noticias.php";
 	}

@@ -1,10 +1,12 @@
+@import url('../css/inicio.css');
+
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
 
-/**********************************-----HEADER-----***************************/
+/**********************************-----HEADER-----******************************************************/
 .logo{
     background-color: white;
     text-align:center;
@@ -53,18 +55,24 @@ ul.menuLista {
     list-style: none;
     text-align: center; 
     font-family: 'Luckiest Guy', sans-serif;
+   
 }
 .menuLista{ /*Ocultar menu*/
     display:none;
 }
 #btn-menu:checked~.menuLista {
    display: inline-block;
+   position: absolute;
+   left:0%;
+   top:35%;
+   z-index:10;
+
 }
 ul.menuLista a:hover {
-    background-color: rgba(205,72,78,1);
+    background-color: rgba(236,76,76);
 }
 
-/**************************FOOTER********************************/
+/**************************----------FOOTER---------------********************************/
 footer{
     height: 350px;    
     background: linear-gradient(190deg, rgba(248,104,104,1) 0%, rgba(205,72,78,1) 15%, rgba(121,9,26,1) 66%, rgba(69,68,68,1) 120%);
@@ -120,7 +128,7 @@ footer hr{
 
 
 
-/*********************MODO RECURSIVO**********************/
+/*********************MODO RECURSIVO************************************************************/
 @media screen and (min-width: 768px){ /*TABLET*/
     /********************HEADER***************/
     body{
@@ -135,6 +143,10 @@ footer hr{
         font-family: sans-serif;
         font-size: 15px;
         padding-top:10px;
+    }
+    .contacto div{
+        padding:10px;
+        margin-bottom: 20px;
     }
         
 }
@@ -157,6 +169,10 @@ footer hr{
         color:black;
         padding:10px 50px 10px 50px;
     }
+    ul.menuLista a:hover{
+        color:white;
+    
+    }
     .menu hr{ 
         display:none;
     }
@@ -165,7 +181,8 @@ footer hr{
        
     }
     
-    /*****************FOOTER************************/
+    /*****************FOOTER************************************************************/
    
 
 }
+

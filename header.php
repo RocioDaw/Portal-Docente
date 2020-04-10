@@ -4,9 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Portal Docente</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/portal-docente.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,12 +35,13 @@
                 <ul class="menuLista">
                     <li><a href="#">INICIO</a></li>
                     <hr>
-                    <li><a href="#">NOSOTROS</a></li>
+                    <li><a href="#">TEMARIOS</a></li>
                     <hr>
-                    <li><a href="#">PORTFOLIO</a></li>
+                    <li><a href="#">NOTICIAS</a></li>
                     <hr>
-                    <li><a href="#">CONTACTO</a></li>
+                    <li><a href="#">FORO</a></li>
                     <hr>
+                    <li><a href="#">LOGIN</a></li>
                 </ul>
             </div>
             

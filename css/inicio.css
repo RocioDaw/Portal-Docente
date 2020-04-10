@@ -1,0 +1,111 @@
+/*************imagen y texto (¿Quiénes somos?)***********/
+.who img{
+    width:80%;
+}
+.who{
+    padding:10px;
+    text-align: center;
+    position:relative;
+    display:inline-block;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    cursor: pointer;
+}
+.tituloWho{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size: 50px;
+    color:rgba(236,76,76);
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+.textoWho{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size: 30px;
+    color:rgba(236,76,76);
+    display:none;   
+}
+/*DESCRIPCIÓN E IMAGENES DEL CONTENIDO*/
+.content{
+   text-align: center;
+   font-family: 'Baloo Paaji 2', cursive;
+}
+.content div{
+    display:grid;
+    grid-template-columns: auto ;
+    grid-template-rows:auto auto auto;    
+    border-top: 2px solid lightgrey;
+    padding:10px;
+}
+
+.content h2{
+    font-size:3em;
+}
+.content span{
+    font-size: 1.2em;
+    color:grey;
+}
+
+.content img{
+    width:50%;
+    margin: 0 auto;
+}
+
+
+/******************MODO RECURSIVO****************************/
+@media screen and (min-width: 768px){ /*TABLET*/
+
+}
+
+@media screen and (min-width: 1024px){/*ORDENADOR*/
+    .textoWho{
+        font-size: 50px;
+        display: block;
+        opacity:0;
+    }
+    .who:hover .textoWho {
+        opacity: 1;
+        transition: 2s linear;
+    }
+    .who:hover .tituloWho {
+        opacity: 0;
+        transition: 1s linear;    
+    }
+    .content div{
+        display:grid;
+        grid-template-columns: auto auto;
+        grid-template-rows:auto auto ;    
+        
+    }
+    .content span{
+        font-size:1.5em;
+        grid-area: 1 / 2 / 3 / 3;
+        display:flex;
+        align-items: center;
+    }
+    .content img{
+        grid-area: 1 / 1 / 2 / 2;
+    }
+   .content h2{
+       grid-area: 2 / 1 / 2 / 2;
+   }
+
+   .content div:nth-child(2) img{
+    grid-area: 1 / 2 / 2 / 3;
+   }
+   .content div:nth-child(2) h2{
+    grid-area: 2 / 2 / 3 / 3;
+   }
+   .content div:nth-child(2) span{
+    grid-area: 1 / 1 / 2 / 2;
+   }
+   
+  
+}
+
+  
+    
