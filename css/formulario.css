@@ -1,0 +1,54 @@
+.paginaFormulario{
+    width: 100%;
+    padding:5px;
+    background-color: lightgrey;
+}
+.paginaFormulario form{
+    width: 80%;
+    margin:10px auto;
+    background-color: white;
+    text-align: center;
+    font-family: 'Baloo Paaji 2', cursive;    
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paginaFormulario label{
+    width:70%;
+    text-align: center;
+}
+.paginaFormulario input{
+    width:70%;
+    height: 30px;
+    margin:10px;
+    padding:5px;
+    background-color:#dcdcdc;
+    border-radius: 5px;
+    font-size: 13px;
+    border:0;
+    outline: 0;
+}
+.paginaFormulario button{
+    width:330px;
+    height: 30px;
+    margin:10px;
+    padding:7px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: rgba(236,76,76);
+    color:white;
+    border:0;
+    outline: 0;
+    box-shadow: 2px 2px  rgb(180, 100, 100) ;
+}
+
+@media screen and (min-width: 1024px){
+    .paginaFormulario form{
+        width: 60%;
+        
+    }
+    
+
+}

@@ -10,12 +10,18 @@
     }	   
 	if($opcion=="inicio"){	
         include("inicio.php");	
-    }
+	}
+	if($opcion=="alta"){
+		include("alta.php");
+	}
 	if($opcion=="noticias" ){	
-	  	$pagina="noticias.php";
+		include("noticias.php");
 	}
 	if($opcion=="temarios"){	
-		$pagina="temarios.php";
+		include("temarios.php");
+	}
+	if($opcion=="login"){
+		include("login.php");
 	}
 			
 ?>
