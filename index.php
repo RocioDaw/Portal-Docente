@@ -12,16 +12,16 @@
         include("inicio.php");	
 	}
 	if($opcion=="alta"){
-		include("alta.php");
+		include("formularios/alta.php");
 	}
 	if($opcion=="noticias" ){	
-		include("noticias.php");
+		include("formularios/formNoticias.php");
 	}
 	if($opcion=="temarios"){	
 		include("temarios.php");
 	}
 	if($opcion=="login"){
-		include("login.php");
+		include("formularios/login.php");
 	}
 			
 ?>

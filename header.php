@@ -2,6 +2,7 @@
 session_start();
 require_once("clases/db_abstract_model.php");
 require_once("clases/Usuario.php");
+require_once("clases/Noticias.php");
 $msg="";
 if(isset($_POST['entrar'])){
     $usr=new Usuario();
