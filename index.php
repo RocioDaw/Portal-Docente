@@ -15,7 +15,10 @@
 		include("formularios/alta.php");
 	}
 	if($opcion=="noticias" ){	
-		include("formularios/formNoticias.php");
+		include("noticias.php");
+	}
+	if($opcion=="mostrarNoticia"){		
+		include("mostrarNoticia.php");
 	}
 	if($opcion=="temarios"){	
 		include("temarios.php");

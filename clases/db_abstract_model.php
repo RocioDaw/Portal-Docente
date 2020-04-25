@@ -35,7 +35,9 @@ abstract class DBAbstractModel {
 			$this->error.= $this->conn->errno . "\n"; 
 			$this->error.= $this->conn->error . "\n"; 
 		}
+		$id = $this->conn->insert_id;
 		$this->close_connection();
+		return $id;
 	}
 	# Traer resultados de una consulta en un Array
 	protected function get_results_from_query() {

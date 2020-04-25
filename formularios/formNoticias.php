@@ -24,23 +24,27 @@
     $destino="./images/imagenesNoticias/"; 
 	if(isset($_POST['publicar'])){
         $titulo=$_POST['titulo'];
-		$texto=$_POST['texto'];
+        $texto=$_POST['texto'];
+        $noticia=new Noticias();
+        $autor_id=$id_usuario; //El autor de la noticia es el usuario registrado
+        $fecha= date('Y-m-d');
+        $noticiaArray=array("autor_id"=>$autor_id,"fecha"=>$fecha,"titulo"=>$titulo,"texto"=>$texto);
+        $id=$noticia->set($noticiaArray);
+
 		if(isset($_FILES["imagen"])){
             $tiposValidos=array("image/gif","image/jpeg","image/png","image/jpg");
+            $extension = substr($_FILES["imagen"]["type"], strrpos($_FILES["imagen"]["type"], '/')+1);
+            
             if (in_array($_FILES["imagen"]["type"],$tiposValidos)){
                 if(is_uploaded_file($_FILES['imagen']['tmp_name'])){
-                    move_uploaded_file($_FILES['imagen']['tmp_name'],$destino.$_FILES['imagen']['name']);
+                    //guarda la imagen con el id de la noticia como nombre
+                    move_uploaded_file($_FILES['imagen']['tmp_name'],$destino.$id.".".$extension);
                 }
             }    
            
         }
     
-        $noticia=new Noticias();
-        $autor_id=3;
-        $fecha= date('Y-m-d');
-        echo $fecha;
-        $noticiaArray=array("autor_id"=>$autor_id,"fecha"=>$fecha,"titulo"=>$titulo,"texto"=>$texto);
-        $noticia->set($noticiaArray);
+        
 			            
 		
 	}

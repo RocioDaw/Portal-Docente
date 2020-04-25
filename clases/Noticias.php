@@ -11,7 +11,8 @@ class Noticias extends DBAbstractModel{
 		$this->db_name = 'portal_docente';//añadir nombre de base de datos
 		
     }
-    
+	
+	
     public function set($data=array()) {
 		//como el id es autoincrementable, nunca se repetirá, no hace falta comprobar si existe
 		foreach ($data as $campo=>$valor):
@@ -23,21 +24,38 @@ class Noticias extends DBAbstractModel{
 			VALUES
 			('$autor_id', '$fecha','$titulo','$texto')
             ";
-            echo $this->query;
-            $this->execute_single_query();
+            $id = $this->execute_single_query();
 			if($this->error==""){
                 //si no hay error
                 $this->msg = "Noticia guardada correctamente";
             }
-				
+			
+			return $id; //para devolver el id de la noticia insertada
     }
     
    public function get() {
 		$this->query = "
-			select * from comentarios
+			select * from noticias
 			";
 	        $this->get_results_from_query();
 	}
+
+	public function getNoticiaPorId($id='') { //buscar noticia por su id
+		if($id != ''){
+			$this->query = "
+			SELECT *
+			FROM noticias
+			WHERE id = '$id'
+			";
+			$this->get_results_from_query();
+		}
+		if(count($this->rows) == 1):
+			foreach ($this->rows[0] as $propiedad=>$valor):
+				$this->$propiedad = $valor;
+			endforeach;
+		endif;
+	}
+
     
     public function getTotalNoticias() { //cuenta el número de noticias
 		$total=0;
@@ -54,7 +72,16 @@ class Noticias extends DBAbstractModel{
 		return $total;
 		
     }
-    
+	
+	public function getVerNoticiasConLimite($cuantos, $comienzo) {
+		$this->query = "
+			select * from noticias order by fecha desc limit $comienzo, $cuantos 
+			";
+			$this->get_results_from_query();
+				
+	}
+
+	
     public function delete($id='') {
 		$this->query = "delete from noticias where id=$id";
 		$this->execute_single_query();
