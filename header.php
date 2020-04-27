@@ -4,6 +4,7 @@ require_once("clases/db_abstract_model.php");
 require_once("clases/Usuario.php");
 require_once("clases/Noticias.php");
 require_once("lib/fechas.php");
+require_once("clases/Temarios.php");
 $msg="";
 if(isset($_POST['entrar'])){
     $usr=new Usuario();
