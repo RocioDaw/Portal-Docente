@@ -1,0 +1,506 @@
+.temariosContainer {
+    text-align: center;
+    font-family: Roboto;
+}
+
+/*IMAGEN E INPUT Y BOTÓN DE BUSCAR*/
+.buscarContainer img {
+    width: 100%;
+}
+
+.buscarContainer {
+    /*contenedor de imagen y formulario*/
+    position: relative;
+}
+
+.buscarFormulario {
+    /*formulario*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -35%;
+    width: 70%;
+
+}
+
+.buscarContainer input {
+    width: 80%;
+    padding: 3px;
+}
+
+.buscarContainer button {
+    width: 25px;
+    padding: 5px;
+    background-color: rgb(254, 154, 43);
+    border: 0;
+    color: white;
+    cursor: pointer;
+}
+
+/*SECTION PARA AÑADIR TEMARIO NUEVO*/
+.añadirTemarioContainer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(254, 154, 43);
+    padding: 10px;
+}
+
+.añadirTemarioContainer button {
+    padding: 8px;
+    margin-top: 10px;
+    font-family: Roboto;
+    border-radius: 5px;
+    border: 0;
+    font-weight: bold;
+    background-color: rgb(88, 44, 97);
+    color: white;
+    cursor: pointer;
+
+}
+
+.añadirTemarioContainer p {
+    font-weight: bold;
+}
+
+/*SECTION FILTRO*/
+.filtro label {
+    display: block;
+    width: 50%;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.filtro {
+    border: 3px solid rgb(88, 44, 97);
+    padding: 8px;
+
+}
+
+.filtro button {
+    padding: 3px;
+    margin-top: 3px;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(88, 44, 97);
+    color: white;
+}
+
+.filtro select {
+    padding: 3px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+/*SECTION MOSTRAR TEMARIOS*/
+.temario .imagen {
+    width: 90%;
+}
+
+.temario {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    border: 1px solid rgb(192, 176, 176);
+    margin: 10px;
+    box-shadow: 10px -4px 13px 0px rgba(199, 197, 197, 1);
+    border-radius: 5px;
+}
+
+.temario div:nth-of-type(1) p:nth-of-type(1) {
+    padding: 8px;
+    text-align: justify;
+}
+
+.temario div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    color: grey;
+}
+
+.temario div:nth-of-type(2) i {
+    color: black;
+}
+
+.temario div:nth-of-type(4) {
+    text-align: left;
+    color: grey;
+
+}
+
+.temario div:nth-of-type(4) i {
+    padding: 4px;
+    color: black;
+
+}
+
+.temario button {
+    border: 0;
+    border-radius: 5px;
+    padding: 8px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0px -1px 6px 1px rgba(199, 197, 197, 1);
+}
+
+/*enlaces "ver más" y "volver al principio"*/
+.enlacesTemarios {
+    margin: 15px;
+}
+
+.enlacesTemarios a {
+    text-decoration: none;
+    border: 1px solid grey;
+    color: grey;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+
+}
+
+.enlacesTemarios a:nth-of-type(2) i {
+    color: grey;
+}
+
+/**********************PÁGINA MOSTRAR TEMARIO (al pulsar botón de "más detalles")*****************************/
+/*div contenidoTemario*/
+.contenidoTemario {
+    font-family: Roboto;
+    border: 1px solid grey;
+    padding: 15px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 7px;
+}
+
+.contenidoTemario div:nth-of-type(1) i {
+    margin-right: 5px;
+    color: rgba(236, 76, 76);
+}
+
+
+.contenidoTemario div:nth-of-type(1) a {
+    color: rgba(236, 76, 76);
+    cursor: pointer;
+}
+
+.contenidoTemario div:nth-of-type(2) h1 {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    color: rgba(236, 76, 76);
+}
+
+.contenidoTemario div:nth-of-type(2) p {
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+}
+
+.contenidoTemario div:nth-of-type(3) {
+    padding: 8px;
+
+}
+
+.contenidoTemario div:nth-of-type(4) {
+    text-align: center;
+    margin: 18px;
+}
+
+.contenidoTemario .enlaceDescargar {
+    padding: 17px;
+    margin: 2px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: rgb(254, 154, 43);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*div valoracionContainer*/
+.mensajeValoracion {
+    color: green;
+    font-size: 25px;
+    padding: 6px;
+}
+
+.mensajeValoracion i {
+    color: green !important;
+}
+
+:root {
+    --color-inactivo: #5f5050;
+    --color-hover: #ffa400;
+}
+
+.valoracion {
+    display: flex;
+    flex-direction: row-reverse;
+    /*para poder seleccionar los hermanos de detrás*/
+    justify-content: center;
+}
+
+.valoracion button {
+    background-color: initial;
+    border: 0;
+    color: var(--color-inactivo);
+    transition: 1s all;
+}
+
+.valoracion button:hover {
+    cursor: pointer;
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+
+button:nth-child(1):hover~button {
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+
+button:nth-child(2):hover~button {
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+
+button:nth-child(3):hover~button {
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+
+button:nth-child(4):hover~button {
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+
+button:nth-child(5):hover~button {
+    color: var(--color-hover);
+    transform: rotate(360deg);
+}
+
+
+.valoracion button:focus {
+    cursor: pointer;
+    color: var(--color-hover);
+
+}
+
+button:nth-child(1):focus~button {
+    color: var(--color-hover);
+
+}
+
+button:nth-child(2):focus~button {
+    color: var(--color-hover);
+
+}
+
+button:nth-child(3):focus~button {
+    color: var(--color-hover);
+
+}
+
+button:nth-child(4):focus~button {
+    color: var(--color-hover);
+
+}
+
+button:nth-child(5):focus~button {
+    color: var(--color-hover);
+
+}
+
+button:nth-child(2):focus~button {
+    color: var(--color-hover);
+}
+
+/* DIV puntuación container*/
+.puntuacionContainer {
+    border: 1px solid grey;
+    margin: 10px auto;
+    width: 90%;
+    padding: 10px;
+    font-family: Roboto;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.puntuacionContainer p {
+    font-size: 25px;
+}
+
+/*enlace Volver*/
+.volver {
+    text-align: center;
+    margin: 8px;
+}
+
+.volver a {
+    text-decoration: none;
+    border: 1px solid grey;
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+    /*SECTION FILTRAR*/
+    .filtro label {
+        width: 30%;
+        text-align: center;
+
+    }
+
+    .filtro button {
+        padding: 5px;
+        width: 20%;
+    }
+
+    .filtro select {
+        width: 30%;
+    }
+
+    /*TABLET*/
+    /*SECTION MOSTRAR TEMARIO*/
+    .temario {
+        grid-template-columns: 30% auto;
+        grid-template-rows: auto auto auto;
+
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    /*ORDENADOR*/
+    /*SECTION AÑADIR TEMARIO*/
+    .añadirTemarioContainer {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .añadirTemarioContainer button {
+        font-size: 20px;
+    }
+
+    .añadirTemarioContainer p {
+        font-size: 25px;
+    }
+
+    /*SECTION BUSCAR*/
+    .buscarContainer img {
+        width: 100%;
+    }
+
+    .buscarContainer {
+        /*contenedor de imagen y formulario*/
+        position: relative;
+    }
+
+    .buscarFormulario {
+        /*formulario*/
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -35%;
+        width: 70%;
+
+    }
+
+    .buscarContainer i {
+        font-size: 25px;
+    }
+
+    .buscarContainer input {
+        padding: 10px;
+        font-size: 25px;
+    }
+
+    .buscarContainer button {
+        width: 45px;
+        padding: 11px;
+    }
+
+    /*SECTION FILTRAR*/
+    .filtro button {
+        padding: 8px;
+        width: 15%;
+    }
+
+    .filtro select {
+        height: 30px;
+        width: 20%;
+    }
+
+    /*SECTION MOSTRAR TEMARIO*/
+    .temario {
+        width: 60%;
+        margin: 20px auto;
+    }
+
+    .temario .imagen {
+        width: 60%;
+
+    }
+
+    .temario {
+        grid-template-columns: 25% auto;
+        grid-template-rows: auto auto auto auto;
+
+    }
+
+    .temario .imagen {
+        grid-area: 1 / 1 / 5 / 3;
+        width: 20%;
+
+
+    }
+
+    .temario div:nth-of-type(1) {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .temario div:nth-of-type(2) {
+        grid-area: 3 / 2 / 4 / 3;
+        justify-content: end;
+    }
+
+    .temario div:nth-of-type(3) {
+        grid-area: 2 / 2 / 3 / 3;
+        text-align: left;
+    }
+
+    .temario div:nth-of-type(2) p {
+        padding: 5px;
+    }
+
+    .temario button {
+        grid-area: 4 / 2 / 5 / 3;
+        width: 25%;
+    }
+
+    .temario div:nth-of-type(1) h3 {
+        font-size: 25px;
+    }
+
+    /*div valoracionContainer*/
+    .valoracion button i {
+        font-size: 25px;
+    }
+
+    .contenidoTemario label {
+        justify-content: center;
+    }
+}

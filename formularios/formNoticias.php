@@ -26,7 +26,7 @@
         $titulo=$_POST['titulo'];
         $texto=$_POST['texto'];
         $noticia=new Noticias();
-        $autor_id=$id_usuario; //El autor de la noticia es el usuario registrado
+        $autor_id=$id_usuario; //El autor de la noticia es el usuario activo
         $fecha= date('Y-m-d');
         $noticiaArray=array("autor_id"=>$autor_id,"fecha"=>$fecha,"titulo"=>$titulo,"texto"=>$texto);
         $id=$noticia->set($noticiaArray);

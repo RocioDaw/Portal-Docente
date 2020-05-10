@@ -1,5 +1,5 @@
 <section class="mostrarNoticiaContainer">
-<?php
+    <?php
     if (isset($_GET['id'])){
         $img=$_GET['imagen'];
         $noticia=new Noticias();

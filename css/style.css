@@ -1,154 +1,186 @@
-@import url('../css/inicio.css'); /*css página de inicio*/
-@import url('../css/formulario.css'); /*css formularios*/
-@import url('../css/noticias.css'); /*css noticias*/
+@import url('../css/inicio.css');
+/*css página de inicio*/
+@import url('../css/formulario.css');
+/*css formularios*/
+@import url('../css/noticias.css');
+/*css noticias*/
+@import url('../css/temarios.css');
+/*css página temarios*/
 
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 /**********************************-----HEADER-----******************************************************/
-.mensaje{
+.mensaje {
     font-family: 'Baloo Paaji 2', cursive;
-    color:red;
+    color: red;
 }
-.iniSesion{
-    display:flex;
+
+.iniSesion {
+    display: flex;
     justify-content: flex-end;
-    padding:1%;
+    padding: 1%;
     text-align: right;
 }
-.iniSesion p{
-    font-family: 'Baloo Paaji 2', cursive; 
-    padding:2px 10px;
-    
-}
-.botonHeader{
-    font-family: 'Baloo Paaji 2', cursive; 
-    border:0;
-    border-radius: 5px;
+
+.iniSesion p {
+    font-family: 'Baloo Paaji 2', cursive;
     padding: 2px 10px;
-    color: #333; 
-    cursor:pointer;
-    
 
 }
-.logo{
-    background-color: white;
-    text-align:center;
-    padding:10px 0 15px 0;
+
+.botonHeader {
+    font-family: 'Baloo Paaji 2', cursive;
+    border: 0;
+    border-radius: 5px;
+    padding: 2px 10px;
+    color: #333;
+    cursor: pointer;
+
+
 }
-.logo img{
+
+.logo {
+    background-color: white;
+    text-align: center;
+    padding: 10px 0 15px 0;
+}
+
+.logo img {
     width: 150px;
 }
+
 /****Icono de menu****/
-.fa-bars:before{ /*tamaño de icono*/
+.fa-bars:before {
+    /*tamaño de icono*/
     font-size: 30px;
     cursor: pointer;
 }
-label{    
-    width:50%;
+
+label {
+    width: 50%;
     display: flex;
     align-content: center;
-    padding:10px;
+    padding: 10px;
     text-align: center;
     width: 100%;
     background-color: white;
-   
+
 }
 
-#btn-menu { /*para que no aparezca el check*/
+#btn-menu {
+    /*para que no aparezca el check*/
     display: none;
 }
+
 /****menu***/
-.menu hr{
+.menu hr {
     width: 5%;
     height: 1px;
     margin: 0 auto;
     background-color: tomato;
-    border:none;
+    border: none;
 }
+
 ul.menuLista a {
     display: block;
     padding: 20px 20px;
     color: #fff;
     text-decoration: none;
-    font-size:1rem;   
+    font-size: 1rem;
 }
+
 ul.menuLista {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.2); /*menu que sale*/
+    background-color: rgba(0, 0, 0, 0.2);
+    /*menu que sale*/
     list-style: none;
-    text-align: center; 
+    text-align: center;
     font-family: 'Luckiest Guy', sans-serif;
-   
-}
-.menuLista{ /*Ocultar menu*/
-    display:none;
-}
-#btn-menu:checked~.menuLista {
-   display: inline-block;
-   position: absolute;
-   left:0%;
-   top:35%;
-   z-index:10;
 
 }
+
+.menuLista {
+    /*Ocultar menu*/
+    display: none;
+}
+
+#btn-menu:checked~.menuLista {
+    display: inline-block;
+    position: absolute;
+    left: 0%;
+    top: 35%;
+    z-index: 10;
+
+}
+
 ul.menuLista a:hover {
-    background-color: rgba(236,76,76);
+    background-color: rgba(236, 76, 76);
 }
 
 /**************************----------FOOTER---------------********************************/
-footer{
-    height: 350px;    
-    background: linear-gradient(190deg, rgba(248,104,104,1) 0%, rgba(205,72,78,1) 15%, rgba(121,9,26,1) 66%, rgba(69,68,68,1) 120%);
-    display:grid;
+footer {
+    height: 350px;
+    background: linear-gradient(190deg, rgba(248, 104, 104, 1) 0%, rgba(205, 72, 78, 1) 15%, rgba(121, 9, 26, 1) 66%, rgba(69, 68, 68, 1) 120%);
+    display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto auto auto;
-    color:white;
+    color: white;
     text-align: center;
-    grid-gap:10px;
+    grid-gap: 10px;
     font-family: 'Luckiest Guy', sans-serif;
 }
-.menuFooterContainer{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
+
+.menuFooterContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
-.contactContainer{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    
+
+.contactContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
 }
+
 /*Contacto del footer (facebook,email,instagram)*/
-.contacto{ /*ocultar texto de los contactos*/
-    display:none;
+.contacto {
+    /*ocultar texto de los contactos*/
+    display: none;
 }
-footer img{
-    width:120px;
+
+footer img {
+    width: 120px;
 }
-footer li a{
+
+footer li a {
     text-decoration: none;
-    color:white;
+    color: white;
 }
-footer li{
+
+footer li {
     list-style-type: none;
 
 }
-footer li i{
+
+footer li i {
     font-size: 35px;
     padding-right: 20px;
-    padding:5px;
-    color:rgba(121,9,26,1);
+    padding: 5px;
+    color: rgba(121, 9, 26, 1);
     background-color: white;
-    border-radius:20px;
+    border-radius: 20px;
 }
-footer hr{
+
+footer hr {
     height: 1px;
     width: 40%;
-    margin:0 auto;
+    margin: 0 auto;
 }
-.item5{
+
+.item5 {
     font-family: sans-serif;
 }
 
@@ -156,60 +188,75 @@ footer hr{
 
 
 /*********************MODO RECURSIVO************************************************************/
-@media screen and (min-width: 768px){ /*TABLET*/
+@media screen and (min-width: 768px) {
+
+    /*TABLET*/
     /********************HEADER***************/
-    body{
+    body {
         background-color: firebrick;
     }
-    .fa-bars:before{ /*tamaño de icono*/
+
+    .fa-bars:before {
+        /*tamaño de icono*/
         font-size: 40px;
     }
+
     /********************FOOTER**************/
-    .contacto{ 
-        display:block;
+    .contacto {
+        display: block;
         font-family: sans-serif;
         font-size: 15px;
-        padding-top:10px;
+        padding-top: 10px;
     }
-    .contacto div{
-        padding:10px;
+
+    .contacto div {
+        padding: 10px;
         margin-bottom: 20px;
     }
-        
+
 }
-@media screen and (min-width: 1024px){/*ORDENADOR*/
+
+@media screen and (min-width: 1024px) {
+
+    /*ORDENADOR*/
     /********************HEADER***************/
-    body{
+    body {
         background-color: gold;
     }
-    header label.fas{  /*ocultar icono del menu*/  
+
+    header label.fas {
+        /*ocultar icono del menu*/
         display: none;
     }
+
     ul.menuLista {
         width: auto;
-        display:inline-block;
+        display: inline-block;
         background: transparent;
         display: flex;
         justify-content: center;
     }
-    ul.menuLista a{
-        color:black;
-        padding:10px 50px 10px 50px;
+
+    ul.menuLista a {
+        color: black;
+        padding: 10px 50px 10px 50px;
     }
-    ul.menuLista a:hover{
-        color:white;
-    
+
+    ul.menuLista a:hover {
+        color: white;
+
     }
-    .menu hr{ 
-        display:none;
+
+    .menu hr {
+        display: none;
     }
-    .menu{
+
+    .menu {
         background-color: white;
-       
+
     }
-    
+
     /*****************FOOTER************************************************************/
-   
+
 
 }
-

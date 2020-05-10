@@ -11,7 +11,7 @@ class Usuario extends DBAbstractModel{
 	function __construct() {
 		$this->db_name = 'portal_docente';
 		
-	}//AÑADIR NOMBRE DE BASE DE DATOS
+	}//NOMBRE DE BASE DE DATOS
 
 	
 	public function set($data=array()) { 
@@ -56,17 +56,12 @@ class Usuario extends DBAbstractModel{
 	}
 		
 	public function get($id='') { //buscar usuario por su id
-		if($email != ''){
+		if($id != ''){
 			$this->query = "
 			SELECT *
 			FROM usuarios
-			WHERE email = '$email'
+			WHERE id = '$id'
 			";
-			$this->get_results_from_query();
-		}else{
-			$this->query = "
-			SELECT id_usr,nombre,email,pass,tipo
-			FROM usuarios";
 			$this->get_results_from_query();
 		}
 		if(count($this->rows) == 1):

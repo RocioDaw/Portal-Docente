@@ -2,13 +2,14 @@
     width: 100%;
     padding:5px;
     background-color: lightgrey;
+    font-family: 'Baloo Paaji 2', cursive;
 }
 .paginaFormulario form{
     width: 80%;
     margin:10px auto;
     background-color: white;
     text-align: center;
-    font-family: 'Baloo Paaji 2', cursive;    
+        
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -19,7 +20,7 @@
     width:70%;
     text-align: center;
 }
-.paginaFormulario input{
+.paginaFormulario input,  .paginaFormulario select{
     width:70%;
     height: 30px;
     margin:10px;
@@ -31,7 +32,7 @@
     outline: 0;
 }
 .paginaFormulario button{
-    width:330px;
+    width:70%;
     height: 30px;
     margin:10px;
     padding:7px;
@@ -51,6 +52,22 @@
 
 .paginaFormulario .fichero{
     background-color: white;
+}
+
+.paginaFormulario p{
+    text-align: center;
+     margin:0 auto;   
+    border-radius: 5px;
+    color:rgba(236,76,76);   
+    border-bottom: 1px solid rgba(236,76,76);   
+}
+
+.paginaFormulario button:nth-of-type(2){
+    background-color:rgb(254, 154, 43);
+    width:40%;
+}
+.paginaFormulario button:nth-of-type(2) i{
+    margin-right:4px;
 }
 
 @media screen and (min-width: 1024px){
