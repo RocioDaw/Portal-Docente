@@ -10,6 +10,14 @@
     margin:10px;
     
 }
+.noticiasContainer .añadirNoticia{
+    text-decoration: none;
+    border:1px solid rgb(254, 154, 43);
+    background-color: rgb(254, 154, 43);
+    color:white;
+    border-radius: 5px;
+    padding:5px;
+}
 .noticiasContainer hr{
     width: 90%;
     margin:10px;

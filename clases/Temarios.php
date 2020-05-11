@@ -121,10 +121,11 @@ class Temarios extends DBAbstractModel {
 
         $this->execute_single_query();
     }
-
+    
     public function edit() {
 
     }
+    
 }
 
 ?>

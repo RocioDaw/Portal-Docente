@@ -1,5 +1,12 @@
 <div class=noticiasContainer>
-    <h1 class="tituloPagina">Últimas Noticias</h1>
+    <div class="encabezadoNoticias">
+        <h1 class="tituloPagina">Últimas Noticias</h1>
+        <?php
+            if($_SESSION['tipo']=='administrador'){
+                echo "<a class='añadirNoticia' href='index.php?p=formNoticias'>Añadir nueva noticia</a>";
+            }
+        ?>
+    </div>
     <hr> 
 <?php
 $comienzo=0;

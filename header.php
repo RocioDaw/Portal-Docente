@@ -17,10 +17,12 @@ if ( isset( $_POST['entrar'] ) ) {
     } else {
         $_SESSION['id'] = $res[0]['id'];
         $_SESSION['email'] = $res[0]['email'];
+        $_SESSION['password'] = $res[0]['password'];
         $_SESSION['apellidos'] = $res[0]['apellidos'];
         $_SESSION['nombre'] = $res[0]['nombre'];
-
         $_SESSION['tipo'] = $res[0]['tipo'];
+        $_SESSION['avatar'] = $res[0]['avatar'];
+        
 
     }
 
@@ -37,8 +39,10 @@ if ( isset( $_GET['a'] ) ) {
         unset( $_SESSION['email'] );
         unset( $_SESSION['nombre'] );
         unset( $_SESSION['apellidos'] );
+         unset( $_SESSION['password'] );
         unset( $_SESSION['id'] );
         unset( $_SESSION['tipo'] );
+        unset( $_SESSION['avatar'] );
         unset( $id_usuario );
 
     }
@@ -72,15 +76,30 @@ if ( isset( $_GET['a'] ) ) {
 <div class = 'iniSesion'>
 
 <?php if ( !isset( $id_usuario ) ) {
+    
     ?>
 
     <button class = 'botonHeader' type = 'submit' onclick = "location='index.php?p=login'">Iniciar sesión</button>
     <?php } else {
         ?>
-        <p>Hola <?php echo $_SESSION['nombre']?></p>
-        <button class = 'botonHeader' type = 'submit' onclick = "location='index.php?a=logout'">Cerrar sesión</button>
-        <?php }
+        <div class="sessionIniciada">
+            <?php
+            if($_SESSION['avatar']!=""){
+            ?>
+            <img class="imagenIniSesion" src="<?=$_SESSION['avatar']?>" width="30">
+            <?php
+            }
+            ?>
+            <a href="index.php?p=alta&&e=editar">Hola <?php echo ucfirst(strtolower($_SESSION['nombre']));?></a>
+            <button class = 'botonHeader' type = 'submit' onclick = "location='index.php?a=logout'">Cerrar sesión</button>
+            
+        </div>
+
+        <?php 
+        }
+       
         ?>
+        
         </div>
         <nav>
 
@@ -88,21 +107,31 @@ if ( isset( $_GET['a'] ) ) {
         <div class = 'logo'>
         <img src = 'images/logo.png' alt = ''>
         </div>
-
         <!-- Main Navigation -->
         <div class = 'menu'>
         <input type = 'checkbox' id = 'btn-menu'>
         <label for = 'btn-menu' class = 'fas fa-bars'></label> <!--icono para menu-->
-        <ul class = 'menuLista'>
+        <ul class = 'menuLista'>        
         <li><a href = 'index.php?p=inicio'>INICIO</a></li>
         <hr>
+        <?php
+        if(isset($id_usuario)){
+        ?>
         <li><a href = 'index.php?p=temarios'>TEMARIOS</a></li>
         <hr>
         <li><a href = 'index.php?p=noticias'>NOTICIAS</a></li>
         <hr>
         <li><a href = 'index.php?p=foro'>FORO</a></li>
         <hr>
+        <?php
+        }
+        
+        if(!isset($id_usuario)){
+        ?>
         <li><a href = 'index.php?p=alta'>REGISTRARSE</a></li>
+        <?php
+        }
+        ?>
         </ul>
         </div>
 

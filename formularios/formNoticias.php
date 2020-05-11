@@ -2,7 +2,7 @@
 
 
 <form action="index.php?p=noticias" method="post" name="formNoticias" enctype="multipart/form-data">
-
+<p>Añade una nueva noticia</p>
 <label for="titulo">TÍTULO:</label> <input type="text" name="titulo" id="titulo" placeholder="ESCRIBE EL TÍTULO DE LA NOTICIA"  autofocus required>  
 <label for="texto">TEXTO DE LA NOTICIA:</label> <textarea name="texto" id="texto" required></textarea>
 <input class="fichero" type="file" name="imagen" />
