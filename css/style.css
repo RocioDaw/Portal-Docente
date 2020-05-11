@@ -6,7 +6,8 @@
 /*css noticias*/
 @import url('../css/temarios.css');
 /*css página temarios*/
-
+@import url('../css/foro.css');
+/*css página foro*/
 * {
     margin: 0;
     padding: 0;

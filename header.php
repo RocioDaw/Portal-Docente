@@ -6,6 +6,8 @@ require_once( 'clases/Noticias.php' );
 require_once( 'lib/fechas.php' );
 require_once( 'clases/Fichero.php' );
 require_once( 'clases/Temarios.php' );
+require_once( 'clases/Hilos.php' );
+require_once( 'clases/Respuestas.php' );
 $msg = '';
 if ( isset( $_POST['entrar'] ) ) {
     $usr = new Usuario();
