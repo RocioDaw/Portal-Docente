@@ -32,6 +32,7 @@
     outline: 0;
 }
 .paginaFormulario button{
+    cursor: pointer;
     width:70%;
     height: 30px;
     margin:10px;

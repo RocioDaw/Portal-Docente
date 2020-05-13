@@ -35,12 +35,12 @@ if($cuantos>0){
             if(substr($file,0,$posPunto)==$idNoticia){
             ?>
                 <div class="noticia">
-                    <img class="imagen" src="<?=$ruta.$file ?>"><br>
+                    <a data-fancybox href="<?=$ruta.$file ?>"><img class="imagen" src="<?=$ruta.$file ?>"></a><br>
                     <div class="containerTexto">
                         <p class="titulo"><?=$tituloNoticia?></p>
                         <p class="fecha"><?=obtenerFechaEnLetra($fecha)?></p>
                         <p class="resumen"><?=substr($textoNoticia, 0, 250).'...'?></p>
-                        <a class="button" href='index.php?p=mostrarNoticia&&id=<?=$idNoticia?>&&imagen=<?=$ruta.$file?>'>LEER ARTÍCULO</a>
+                        <a class="button" href='index.php?p=mostrarNoticia&id=<?=$idNoticia?>&imagen=<?=$ruta.$file?>'>LEER ARTÍCULO</a>
                     </div>
                 </div>
             <?php
@@ -57,7 +57,7 @@ if($cuantos>0){
     if ($total>5){
 		if ($comienzo+5< $total){
 			$comienzo=$comienzo+5;
-            $verMas="<a href='index.php?p=noticias&&comienzo=$comienzo'>VER MÁS NOTICIAS </a> <i class='fas fa-angle-double-right'></i>";
+            $verMas="<a href='index.php?p=noticias&comienzo=$comienzo'>VER MÁS NOTICIAS </a> <i class='fas fa-angle-double-right'></i>";
             if($comienzo==5){ 
                 echo $verMas;
             }

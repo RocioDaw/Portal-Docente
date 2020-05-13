@@ -31,7 +31,7 @@
     width: 90%;
     margin:20px auto;
     border:1px solid lightgrey;
-    height: 80px;
+    
     padding:10px;
     border-radius: 8px;
 }
@@ -151,14 +151,36 @@
     text-align: center;
 }
 .impresionRespuesta div:nth-of-type(2){
+    display:flex;
+    flex-flow: column;
     padding:10px;
 }
-.respuestasHilo h1{
+.tituloRespuestas{
     text-align: center;
     color:gray;
+    font-family: Roboto;
 }
 .respuestasHilo hr{
     margin:10px auto;
     width: 80%;
     
+}
+.impresionRespuesta div:nth-of-type(2) .trash{
+    text-align: right;
+    color:rgba(236, 76, 76);
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .impresionRespuesta{    
+        width:60%;
+    
+    }
+    .impresionRespuesta div:nth-of-type(1){
+        font-size: 18px;
+    }
+    .impresionRespuesta img{
+        width:150px;
+        border-radius: 5px;
+    }
 }

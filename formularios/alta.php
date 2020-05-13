@@ -1,7 +1,7 @@
 
 <div class="paginaFormulario">
 
-<form action="index.php?p=alta" method="post" name="altaUsuario" enctype="multipart/form-data">
+<form action="index.php?p=alta" onsubmit="return comprobarCamposRegistro()" method="post" name="altaUsuario" enctype="multipart/form-data">
 <?php
     $nombre="";
     $apellidos="";
@@ -22,11 +22,11 @@
     }
 
 ?>
-<label for="nombre">NOMBRE:</label> <input type="text" name="nombre" id="nombre" value="<?=$nombre?>" placeholder="ESCRIBE TU NOMBRE"  autofocus required>  
-<label for="apellidos"> APELLIDOS:</label>  <input type="text" name="apellidos" value="<?=$apellidos?>" id="apellidos" placeholder="ESCRIBE TUS APELLIDOS" required> 
-<label for="email">EMAIL:</label>  <input type="email" name="email" id="email" value="<?=$email?>" placeholder="ESCRIBE TU EMAIL" required> 
-<label for="password">CONTRASEÑA: </label> <input type="password" name="password" value="<?=$password?>" placeholder="ESCRIBE TU CONTRASEÑA" required>
-<label for="password2">REPETIR CONTRASEÑA: </label> <input type="password" value="<?=$password?>" name="password2" placeholder="VUELVE A ESCRIBIR TU CONTRASEÑA" required>
+<label for="nombre">NOMBRE:</label> <input type="text" name="nombre" id="nombre" value="<?=$nombre?>" placeholder="ESCRIBE TU NOMBRE"  autofocus>  
+<label for="apellidos"> APELLIDOS:</label>  <input type="text" name="apellidos" value="<?=$apellidos?>" id="apellidos" placeholder="ESCRIBE TUS APELLIDOS"> 
+<label for="email">EMAIL:</label>  <input type="text" name="email" id="email" value="<?=$email?>" placeholder="ESCRIBE TU EMAIL"> 
+<label for="password">CONTRASEÑA: </label> <input type="password" name="password" value="<?=$password?>" placeholder="ESCRIBE TU CONTRASEÑA">
+<label for="password2">REPETIR CONTRASEÑA: </label> <input type="password" value="<?=$password?>" name="password2" placeholder="VUELVE A ESCRIBIR TU CONTRASEÑA">
 <label for="tipo">TIPO DE USUARIO: </label>
 <select name="tipo">
     <option value="administrador" <?php if($tipo=="administrador") echo'selected="selected"';?>>Administrador</option>
@@ -57,6 +57,7 @@
 
 
 <?php
+
     $nombre="";
     $apellidos="";
 	$email="";
@@ -101,6 +102,8 @@
             $_SESSION['tipo'] = $tipo;
             $_SESSION['avatar'] = $avatar;
 
+            //redireccionamos al usuario identificado hacia inicio
+            header("Location:index.php");
             
             
 			            
@@ -137,6 +140,11 @@
             $_SESSION['nombre'] = $nombre;
             $_SESSION['tipo'] = $tipo;
             $_SESSION['avatar'] = $avatar;
+            ?>
+            <script>
+                mostrarToastSuccess("Datos editados correctamente")
+            </script>
+            <?php
         }else{
             $msg="Los password no coinciden";
         }

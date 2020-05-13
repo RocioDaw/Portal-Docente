@@ -40,8 +40,14 @@ class Respuestas extends DBAbstractModel{
 
     }
 
-    public function delete(){
-        
+    public function delete( $id = '' ) {
+
+        $this->query = "
+			DELETE FROM respuestas
+			WHERE id = '$id' 
+			";
+
+        $this->execute_single_query();
     }
 
 

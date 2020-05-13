@@ -112,7 +112,7 @@ if ( isset( $_GET['idTemario'] ) ) {
             <p><b>Asignatura: </b> <?= $asignatura?></p>
             </div>
 
-            <button style = "background-color:<?=$color?>" type = 'submit' onclick = "location='index.php?p=mostrarTemario&&id=<?=$idTemario?>'">Más detalles...</button>
+            <button style = "background-color:<?=$color?>" type = 'submit' onclick = "location='index.php?p=mostrarTemario&id=<?=$idTemario?>'">Más detalles...</button>
 
             </div>
             <?php
@@ -123,7 +123,7 @@ if ( isset( $_GET['idTemario'] ) ) {
         if ( $total>$numAMostrar ) {
             if ( $comienzo+$numAMostrar< $total ) {
                 $comienzo = $comienzo+$numAMostrar;
-                $verMas = "<a href='index.php?p=temarios&&comienzo=$comienzo'>VER MÁS <i class='fas fa-angle-double-right'></i> </a> ";
+                $verMas = "<a href='index.php?p=temarios&comienzo=$comienzo'>VER MÁS <i class='fas fa-angle-double-right'></i> </a> ";
                 if ( $comienzo == $numAMostrar ) {
 
                     echo $verMas;

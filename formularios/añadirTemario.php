@@ -1,10 +1,10 @@
 <div class="paginaFormulario">
 <p>Añade un nuevo temario para que otros profesionales puedan descargarlo</p>
-<form action="index.php?p=añadirTemario" method="post" name="formNoticias" enctype="multipart/form-data">
+<form action="index.php?p=añadirTemario" onsubmit="return validarInsertarTemario()" method="post" name="formNoticias" enctype="multipart/form-data">
 
-    <label for="titulo">TÍTULO:</label> <input type="text" name="titulo" id="titulo" placeholder="ESCRIBE EL TÍTULO DE TU CONTENIDO"  autofocus required>  
-    <label for="resumen">RESUMEN DEL CONTENIDO:</label> <textarea name="resumen" id="resumen" required></textarea>
-    <label for="asignatura">ASIGNATURA:</label><input type="text" name="asignatura" id="asignatura" placeholder="ESCRIBE LA ASIGNATURA CORRESPONDIENTE"  required>  
+    <label for="titulo">TÍTULO:</label> <input type="text" name="titulo" id="titulo" placeholder="ESCRIBE EL TÍTULO DE TU CONTENIDO"  autofocus>  
+    <label for="resumen">RESUMEN DEL CONTENIDO:</label> <textarea name="resumen" id="resumen"></textarea>
+    <label for="asignatura">ASIGNATURA:</label><input type="text" name="asignatura" id="asignatura" placeholder="ESCRIBE LA ASIGNATURA CORRESPONDIENTE">  
     <label for="nivelEducacion">NIVEL:</label><select name="nivelEducacion">
         <option value="educacionInfantil">Educación infantil</option>
         <option value="educaciónPrimaria">Educación primaria</option>
@@ -46,8 +46,12 @@
             //guardar temario en la base de datos
             $temarioArray = array("titulo"=>$titulo, "autor_id"=>$id_usuario, "resumen"=>$resumen,"fecha"=>date('Y-m-d'),"fichero_id"=>$idFichero,"nivel_educacion"=>$nivel,"descargas"=>0,"asignatura"=>$asignatura);
             $temario= new Temarios();
-            $temario->set($temarioArray);
-
+            $idTemario = $temario->set($temarioArray);
+            ?>
+            <script>
+                mostrarToastSuccess("Temario insertado correctamente. <a href='index.php?p=mostrarTemario&id=<?=$idTemario?>'>Pulse aqui</a> para ver el temario")
+            </script>
+            <?php
         }
       
     }

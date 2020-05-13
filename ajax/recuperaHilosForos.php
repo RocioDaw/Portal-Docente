@@ -15,7 +15,7 @@ while ($fila = $result->fetch_assoc()) {
             <p><?=$fila['fecha']?></p>
             <p>Categoría: <?=$fila['categoria']?></p>
         </div>    
-        <a href="index.php?p=mostrarHilo&&id=<?=$fila['id']?>"><?=$fila['titulo']?></a>    
+        <a href="index.php?p=mostrarHilo&id=<?=$fila['id']?>"><?=$fila['titulo']?></a>    
     </div>
 <?php   
 }

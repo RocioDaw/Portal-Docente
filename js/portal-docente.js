@@ -11,8 +11,82 @@ $(document).ready(function () {
   $('#paginacion span').on('click', cargarHilos);
 });
 
-/*Valoración temarios*/
+function comprobarCamposRegistro() {
+  let error = false
+  let mensaje;
+  if ($('form[name="altaUsuario"] input[name="nombre"]').val() == '') {
+    error = true;
+    mensaje = "Debe introducir un nombre";
+  } else if ($('form[name="altaUsuario"] input[name="apellidos"]').val() == '') {
+    error = true;
+    mensaje = "Debe introducir sus apellidos";
+  } else if ($('form[name="altaUsuario"] input[name="email"]').val() == '') {
+    error = true;
+    mensaje = "Debe introducir un email";
+  } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('input[name="email"]').val())) {
+    error = true;
+    mensaje = "Email no válido. Por favor introduce un email válido";
+  } else if ($('form[name="altaUsuario"] input[name="password"]').val() == '') {
+    error = true;
+    mensaje = "Debe introducir una contraseña";
+  } else if ($('input[name="password"]').val() != $('input[name="password2"]').val()) {
+    error = true;
+    mensaje = "Las dos contraseña no coinciden";
+  }
 
+  mostrarToastError(mensaje)
+  return !error;
+}
+
+function validarInsertarTemario() {
+  let error = false
+  let mensaje;
+  if ($('input[name="titulo"]').val() == '') {
+    error = true;
+    mensaje = "Debe introducir un titulo";
+  } else if ($('textarea[name="resumen"]').val() == '') {
+    error = true;
+    mensaje = "Debe introducir un resumen para el nuevo temario";
+  } else if ($('input[name="asignatura"]').val() == '') {
+    error = true;
+    mensaje = "Debe introducir la asignatura a la que pertenece el temario";
+  } else if ($('input[type="file"][name="temario"]').val() == '') {
+    error = true;
+    mensaje = "Debe introducir un archivo";
+  }
+
+  mostrarToastError(mensaje)
+  return !error;
+}
+
+function comprobarFichero() {
+  let error = false
+  if ($('input[type="file"][name="imagen"]').val() == '') {
+    error = true;
+    mostrarToastError("<h3>Imagen no insertada</h3><br>La imagen en la noticia es obligatoria.")
+  }
+  return !error;
+}
+
+function mostrarToastSuccess(mensaje) {
+  mostrarToast('Success', 'success', mensaje)
+}
+
+function mostrarToastError(mensaje) {
+  mostrarToast('Error', 'error', mensaje)
+}
+
+function mostrarToast(tipo, icono, mensaje) {
+  $.toast({
+    heading: tipo,
+    text: mensaje,
+    showHideTransition: 'fade',
+    icon: icono,
+    hideAfter: 5000
+  })
+}
+
+/*Valoración temarios por ajax*/
 function enviarValoracion(valoracion, temarioId) {
   $.ajax({
     data: {

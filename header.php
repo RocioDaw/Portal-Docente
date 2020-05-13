@@ -8,31 +8,10 @@ require_once( 'clases/Fichero.php' );
 require_once( 'clases/Temarios.php' );
 require_once( 'clases/Hilos.php' );
 require_once( 'clases/Respuestas.php' );
-$msg = '';
-if ( isset( $_POST['entrar'] ) ) {
-    $usr = new Usuario();
-    $usr->buscarUsuarioPass( $_POST['email'], $_POST['password'] );
-    $res = $usr->get_rows();
 
-    if ( $res == NULL ) {
-        $msg = 'LOGIN INCORRECTO';
-    } else {
-        $_SESSION['id'] = $res[0]['id'];
-        $_SESSION['email'] = $res[0]['email'];
-        $_SESSION['password'] = $res[0]['password'];
-        $_SESSION['apellidos'] = $res[0]['apellidos'];
-        $_SESSION['nombre'] = $res[0]['nombre'];
-        $_SESSION['tipo'] = $res[0]['tipo'];
-        $_SESSION['avatar'] = $res[0]['avatar'];
-        
-
-    }
-
-}
 
 if ( isset( $_SESSION['id'] ) ) {
     $id_usuario = $_SESSION['id'];
-
 }
 
 if ( isset( $_GET['a'] ) ) {
@@ -59,6 +38,8 @@ if ( isset( $_GET['a'] ) ) {
 <meta charset = 'UTF-8'>
 <title>Portal Docente</title>
 <script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src = 'js/jquery.toast.min.js'></script>
 <script src = 'js/portal-docente.js'></script>
 <meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
 <link href = 'css/fontawesome-free-5.0.1/css/fontawesome-all.css' rel = 'stylesheet' type = 'text/css'>
@@ -66,7 +47,12 @@ if ( isset( $_GET['a'] ) ) {
 <link href = 'https://fonts.googleapis.com/css?family=Lobster&display=swap' rel = 'stylesheet'>
 <link href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap' rel = 'stylesheet'>
 <link href = 'https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap' rel = 'stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" />
 <link rel = 'stylesheet' href = 'css/style.css'>
+<link rel = 'stylesheet' href = 'css/jquery.toast.min.css'>
+
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
 <script>
     <?php
@@ -87,7 +73,6 @@ if ( isset( $_GET['a'] ) ) {
 
 <!-- Header -->
 <header class = 'header'>
-<p class = 'mensaje'><?php echo $msg?>
 <div class = 'iniSesion'>
 
 <?php if ( !isset( $id_usuario ) ) {
@@ -105,7 +90,7 @@ if ( isset( $_GET['a'] ) ) {
             <?php
             }
             ?>
-            <a href="index.php?p=alta&&e=editar">Hola <?php echo ucfirst(strtolower($_SESSION['nombre']));?></a>
+            <a href="index.php?p=alta&e=editar">Hola <?php echo ucfirst(strtolower($_SESSION['nombre']));?></a>
             <button class = 'botonHeader' type = 'submit' onclick = "location='index.php?a=logout'">Cerrar sesión</button>
             
         </div>

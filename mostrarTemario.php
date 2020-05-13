@@ -44,7 +44,7 @@
                 <?php
                     if($autor==$id_usuario){
                 ?>
-                <a class="enlaceBorrar" href="index.php?p=temarios&&idTemario=<?=$idTemario?>"><i class='fas fa-trash-alt'></a></i></a>
+                <a class="enlaceBorrar" href="index.php?p=temarios&idTemario=<?=$idTemario?>"><i class='fas fa-trash-alt'></a></i></a>
                 <?php
                     }
                 ?>

@@ -78,7 +78,7 @@ class Noticias extends DBAbstractModel {
 
     public function getVerNoticiasConLimite( $cuantos, $comienzo ) {
         $this->query = "
-			select * from noticias order by fecha desc limit $comienzo, $cuantos 
+			select * from noticias order by id desc limit $comienzo, $cuantos 
 			";
         $this->get_results_from_query();
 

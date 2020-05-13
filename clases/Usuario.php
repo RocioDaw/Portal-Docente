@@ -49,7 +49,6 @@ class Usuario extends DBAbstractModel{
 			avatar='$avatar'
 			WHERE id = '$id'
 		";
-		echo $this->query;
 		$this->execute_single_query();
 		if($this->error==""){//si no hay error
 			$this->msg = "Usuario $this->nombre modificado correctamente";
@@ -96,7 +95,6 @@ class Usuario extends DBAbstractModel{
 			SET avatar='$avatar'
 			WHERE id = $idUsuario
 			";
-        echo $this->query;
         $this->execute_single_query();
     }
 	public function delete($email= '') {

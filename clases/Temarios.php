@@ -107,7 +107,6 @@ class Temarios extends DBAbstractModel {
 			SET descargas=descargas+1
 			WHERE fichero_id = $idFichero
 			";
-        echo $this->query;
         $this->execute_single_query();
 
     }

@@ -36,12 +36,13 @@
     if ($respuestas == true){
      ?>
      <div class="paginaFormulario"> 
-     <form action="index.php?p=mostrarHilo&&id=<?=$_GET['id']?>" method="post" name="formHilo" enctype="multipart/form-data">
+     <form action="index.php?p=mostrarHilo&id=<?=$_GET['id']?>" method="post" name="formHilo" enctype="multipart/form-data">
         <label for="respuesta">Deja aquí tu respuesta:</label> <textarea name="respuesta" id="respuesta" placeholder="Respuesta..." required></textarea>
         <button type="submit" id="publicar" name="publicar" value="publicar">PUBLICAR</button>
-
-    </form>
+        
+    </form>    
     </div> 
+    <h1 class="tituloRespuestas">Respuestas:</h1>
      <?php 
     }
 
@@ -57,7 +58,7 @@
     ?>
     <section class="respuestasHilo">
         <hr>
-        <h1>Respuestas:</h1>
+        
         <?php 
             $resp = new Respuestas();
             $resp -> get($_GET['id']);
@@ -68,13 +69,14 @@
                     $fechaRespuesta= $resp->get_rows()[$cont]['fecha'];
                     $textoRespuesta = $resp->get_rows()[$cont]['respuesta'];
                     $idUsuarioRespuesta = $resp->get_rows()[$cont]['usuario_id'];
-                   
+                    $idRespuesta = $resp->get_rows()[$cont]['id'];
 
                     $user = new Usuario();
                     $user -> get($idUsuarioRespuesta);
                     $rs=$user->get_rows();
                     $nombreUsRespuesta = $rs[0]['nombre'];
                     $avatarUsRespuesta = $rs[0]['avatar'];
+                    $userId = $rs[0]['id'];
                     ?>
                     <div class="impresionRespuesta">
                         <div>
@@ -84,11 +86,21 @@
                         </div>
                         <div>
                             <p><?=$textoRespuesta?></p>
+                            <?php
+                                if($userId == $_SESSION['id'] || $_SESSION['tipo'] =='administrador'){
+                                    echo "<a class='trash' href='index.php?p=mostrarHilo&id=".$_GET['id']."&idRespuesta=$idRespuesta'><i class='fas fa-trash-alt'></i></a>";
+                                }
+                            ?>
                         </div>
 
                     </div>
                     <?php
                 }
+            }
+
+            if(isset($_GET['idRespuesta'])){
+                $respuestaABorrar = new Respuestas();
+                $respuestaABorrar ->delete($_GET['idRespuesta']);
             }
         ?>
     </section>

@@ -40,6 +40,7 @@
         $hiloArray = array("titulo"=>$titulo, "usuario_id"=>$id_usuario, "tema"=>$tema,"categoria"=>$categoria,"respuestas"=>$respuestas);
         $hilo=new Hilos();
         $hilo->set($hiloArray);
+        header("Location:index.php?p=foro");
     }
 
 ?>
