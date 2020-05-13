@@ -1,11 +1,10 @@
 <?php
-class Respuesta extends DBAbstractModel{
+class Respuestas extends DBAbstractModel{
     private $id;
     private $usuario_id;
     private $hilo_id;
-    private $fecha;
     private $respuesta;
-    private $likes;
+
  
 
     function __construct() {
@@ -19,21 +18,21 @@ class Respuesta extends DBAbstractModel{
         $$campo = $valor;
         endforeach;
         $this->query = "
-			INSERT INTO respuesta
-			(usuario_id,fecha,hilo_id,likes,respuesta)
+			INSERT INTO respuestas
+			(usuario_id,hilo_id,respuesta)
 			VALUES
-			('$usuario_id', '$fecha','$hilo_id','$likes','$respuesta')
+			('$usuario_id', '$hilo_id','$respuesta')
             ";
         $id = $this->execute_single_query();
-        
+        //echo $this->query;
         return $id;
      
     }
 
-    public function get() {
+    public function get($idHilo = '' ) {
         $this->query = "
-			select * from respuesta
-			";
+			select * from respuestas where hilo_id=$idHilo
+            ";
         $this->get_results_from_query();
     }
 

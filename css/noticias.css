@@ -107,10 +107,7 @@
 .mostrarNoticiaContainer img{
    margin:0 auto;
 }
-.mostrarNoticiaContainer .volver a{
-    text-decoration: none;
-    color:rgba(236,76,76);
-}
+
 
 @media screen and (min-width: 768px){ /*TABLET*/
     .mostrarNoticiaContainer p:nth-of-type(1){

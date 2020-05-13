@@ -18,5 +18,5 @@
     
 ?>
 
-    <h3 class="volver">[<a href='index.php?p=noticias'>VOLVER</a>]</h3>
+    <h3 class="volver"><a href='index.php?p=noticias'>VOLVER</a></h3>
 </section>

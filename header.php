@@ -67,6 +67,19 @@ if ( isset( $_GET['a'] ) ) {
 <link href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap' rel = 'stylesheet'>
 <link href = 'https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap' rel = 'stylesheet'>
 <link rel = 'stylesheet' href = 'css/style.css'>
+
+<script>
+    <?php
+        if (isset( $_GET['p'] ) && $_GET['p'] == 'foro') {
+    ?>
+            $(document).ready(function () {
+                $('#paginacion span.numero[data-info="1"').click(); //lanzamos el click de la primera pagina
+            });
+    <?php 
+        } 
+    ?>
+</script>
+
 </head>
 <body>
 

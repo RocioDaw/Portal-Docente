@@ -1,9 +1,8 @@
 <?php
-class Hilo extends DBAbstractModel{
+class Hilos extends DBAbstractModel{
     private $id;
     private $usuario_id;
     private $titulo;
-    private $fecha;
     private $tema;
     private $categoría;
     private $respuestas;
@@ -20,10 +19,11 @@ class Hilo extends DBAbstractModel{
         endforeach;
         $this->query = "
 			INSERT INTO hilo
-			(usuario_id,fecha,titulo,categoria,tema,respuestas)
+			(usuario_id,titulo,categoria,tema,respuestas)
 			VALUES
-			('$usuario_id', '$fecha','$titulo','$categoria','$tema','$respuestas')
+			('$usuario_id','$titulo','$categoria','$tema','$respuestas')
             ";
+            //echo $this->query;
         $id = $this->execute_single_query();
         
         return $id;
@@ -37,13 +37,50 @@ class Hilo extends DBAbstractModel{
         $this->get_results_from_query();
     }
 
+
+    public function getTotalHilos() {
+        //cuenta el número de hilos
+        $total = 0;
+        $this->query = "
+			select count('id') as 'total' from hilo
+			";
+        $this->get_results_from_query();
+
+        if ( count( $this->rows ) == 1 ) {
+            $total = $this->rows[0]['total'];
+
+        }
+        return $total;
+
+    }
+
+    public function getHiloPorId( $id = '' ) {
+        if ( $id != '' ) {
+            $this->query = "
+			SELECT *
+			FROM hilo
+			WHERE id = '$id'
+			";
+            $this->get_results_from_query();
+        }
+        if ( count( $this->rows ) == 1 ):
+        foreach ( $this->rows[0] as $propiedad=>$valor ):
+        $this->$propiedad = $valor;
+        endforeach;
+        endif;
+    }
+
+
+    public function delete( $id = '' ) {
+        $this->query = "delete from hilo where id=$id";
+        $this->execute_single_query();
+    }
+
     public function edit(){
 
     }
 
-    public function delete(){
-
-    }
+    
 
 
 

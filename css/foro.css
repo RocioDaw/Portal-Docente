@@ -1,0 +1,164 @@
+/*SECTION ABRIR HILO*/
+.foroContainer{
+    text-align: center;
+    font-family: Roboto;
+}
+.abrirHilo {
+    width: 100%;
+    height: 100px;
+    background-color: lightgrey;
+    padding: 10px;
+}
+.abrirHilo button {
+    padding: 8px;
+    margin-top: 10px;
+    font-family: Roboto;
+    border-radius: 5px;
+    border: 0;
+    font-weight: bold;
+    background-color: rgb(254, 154, 43);
+    color: white;
+    cursor: pointer;
+}
+.abrirHilo p {
+    font-weight: bold;
+}
+
+
+/*SECTION HILOS*/
+
+.hilo{
+    width: 90%;
+    margin:20px auto;
+    border:1px solid lightgrey;
+    height: 80px;
+    padding:10px;
+    border-radius: 8px;
+}
+.hilo div:first-child{
+    display:flex;
+    justify-content: space-between;
+}
+.hilo p:first-child{
+    color:grey;
+}
+
+.hilo p:nth-of-type(2){
+    background-color: grey;
+    padding:4px;
+    border-radius: 5px;
+    color:white;
+}
+
+.hilo a{
+    font-size: 23px;
+    color:rgba(236, 76, 76);
+}
+.hilo a:hover{
+    color:grey;
+}
+
+
+/*SECTION PAGINACION*/
+#paginacion {
+    background-color: lightgrey;
+    padding:6px;
+}
+#paginacion span{
+    cursor: pointer;
+    margin-right: 5px;
+}
+#paginacion span.hidden {
+    visibility: hidden;
+}
+#paginacion span:first-child{
+    color:rgba(236, 76, 76);
+}
+#paginacion span:last-child{
+    color:rgba(236, 76, 76);
+}
+#paginacion .numero{
+    background-color: white;
+    color:rgba(236, 76, 76);
+    padding:0px 5px;
+    border-radius: 4px;
+}
+#paginacion .numero:hover, #paginacion .numero.selected{
+    color:white;
+    background-color:rgba(236, 76, 76) ;
+}
+
+
+/*PAGINA MOSTRARHILO */
+/*div hiloContainer*/
+.hiloContainer{
+    font-family: Roboto;
+    display:grid;
+     grid-template-columns: auto auto;
+    grid-template-rows:auto auto ;  
+    border:2px solid lightgrey; 
+    border-radius: 5px;
+    width:98%;
+    margin:10px auto;
+    
+}
+.hiloContainer div:nth-of-type(1) img{
+    width:150px;
+    border-radius: 10px;
+}
+.hiloContainer div:nth-of-type(2){
+    padding:10px;
+}
+.hiloContainer div:nth-of-type(2) h3{
+    margin-bottom: 6px;
+    color:rgba(236, 76, 76);
+}
+.hiloContainer div:nth-of-type(2) p{
+    text-align: justify;
+}
+.hiloContainer div:nth-of-type(1){
+    padding:10px;
+}
+.hiloContainer div:nth-of-type(1) p:nth-of-type(1){
+    font-weight: bold;
+    padding:5px;
+}
+.hiloContainer div:nth-of-type(1) p:nth-of-type(2){
+    color:grey;
+}
+/*SECTION Respuestas Hilo*/
+.impresionRespuesta{
+    font-family: Roboto;
+    width:98%;
+    border-radius: 5px;
+    margin:10px auto;
+    display:grid;
+    grid-template-columns: 30% auto;
+    border:1px solid rgb(254, 154, 43);
+    padding:5px;
+}
+.impresionRespuesta img{
+   width:60px;
+   border-radius: 5px;
+}
+.impresionRespuesta div:nth-of-type(1){
+    text-align: center;
+}
+.impresionRespuesta div:nth-of-type(1) p:nth-of-type(2){
+    font-size: 10px;
+}
+.impresionRespuesta div:nth-of-type(1) p:nth-of-type(1){
+    text-align: center;
+}
+.impresionRespuesta div:nth-of-type(2){
+    padding:10px;
+}
+.respuestasHilo h1{
+    text-align: center;
+    color:gray;
+}
+.respuestasHilo hr{
+    margin:10px auto;
+    width: 80%;
+    
+}
