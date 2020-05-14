@@ -36,7 +36,7 @@ if ( isset( $_GET['a'] ) ) {
 
 <head>
 <meta charset = 'UTF-8'>
-<title>Portal Docente</title>
+<title>Portal Docente | Contenido docente para el profesorado</title>
 <script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 <script src = 'js/jquery.toast.min.js'></script>
@@ -66,6 +66,36 @@ if ( isset( $_GET['a'] ) ) {
     ?>
 </script>
 
+<?php
+    //agregamos para la pagina de inicio que sera la unica publica para los buscadores la optimizacion para el SEO
+    if (!isset( $_GET['p'] ) || $_GET['p'] == 'inicio') {
+?>
+    <meta name="description" content="Web especializada en material docente. Temarios, noticias, documentos, y todo lo relevante en el sector de la docencia">
+    <meta name="robots" content="index,follow">
+    <meta name="keywords" content="docencia, docente, maestro, profesor, profesorado, temarios, noticias, foro, recursos, documentos, ejercicios, portal">
+    <script type="application/ld+json">
+        {
+            "@context" : "https://schema.org",
+            "@type" : "Organization",
+            "name" : "Portal Docente",
+            "Description" : "Web especializada en material docente. Temarios, noticias, documentos, y todo lo relevante en el sector de la docencia",
+            "logo" : "https://portaldocente20.000webhostapp.com/images/logo.png",
+            "url" : "https://portaldocente20.000webhostapp.com"
+        }
+    </script>    
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta property="og:title" content="Portal Docente | Contenido docente para el profesorado">
+    <meta property="og:description" content="Web especializada en material docente. Temarios, noticias, documentos, y todo lo relevante en el sector de la docencia">
+    <meta property="og:image" content="https://portaldocente20.000webhostapp.com/images/logo.png">
+    <meta property="og:url" content="https://portaldocente20.000webhostapp.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter -->
+	<meta name="twitter:card" content="summary">
+    
+<?php
+    }
+?>
+
 </head>
 <body>
 
@@ -74,7 +104,7 @@ if ( isset( $_GET['a'] ) ) {
 <!-- Header -->
 <header class = 'header'>
 <div class = 'iniSesion'>
-
+        <div id="fechaActual"></div>
 <?php if ( !isset( $id_usuario ) ) {
     
     ?>
@@ -83,17 +113,17 @@ if ( isset( $_GET['a'] ) ) {
     <?php } else {
         ?>
         <div class="sessionIniciada">
-            <div>
+            <div class="parteAvatar">
             <?php
             if($_SESSION['avatar']!=""){
             ?>
-            <img class="imagenIniSesion" src="<?=$_SESSION['avatar']?>" width="30">
+            <img class="imagenIniSesion" src="<?=$_SESSION['avatar']?>" width="30"><br>
             <?php
             }
             ?>
             <a href="index.php?p=alta&e=editar">Hola <?php echo ucfirst(strtolower($_SESSION['nombre']));?></a>
             </div>
-            <div>
+            <div class="parteOpciones">
             <button class = 'botonHeader' type = 'submit' onclick = "location='index.php?a=logout'">Cerrar sesión</button>
             </div>
         </div>

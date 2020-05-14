@@ -9,8 +9,13 @@ $(document).ready(function () {
   });
   //tratamiento para paginacion por ajax
   $('#paginacion span').on('click', cargarHilos);
-});
 
+  //meto la fecha actual en la cabecera
+  //para coger la fecha uso el new Date(Date.now()) y con el toLocaleString la parseo al formato de españa
+  //luego separo con un split de espacio (' ') la fecha de la hora, ya que la hora no quiero ponerla.
+  $('#fechaActual').html(new Date(Date.now()).toLocaleString().split(' ')[0]);
+});
+//para comprobar el formulario de alta.php
 function comprobarCamposRegistro() {
   let error = false
   let mensaje;
@@ -33,11 +38,11 @@ function comprobarCamposRegistro() {
     error = true;
     mensaje = "Las dos contraseña no coinciden";
   }
-
+  //con mostrarToastError generamos el toast con la plantilla de error y el mensaje que quiero que aparezca
   mostrarToastError(mensaje)
   return !error;
 }
-
+//validar el formulario de añadirTemario.php
 function validarInsertarTemario() {
   let error = false
   let mensaje;
@@ -58,7 +63,7 @@ function validarInsertarTemario() {
   mostrarToastError(mensaje)
   return !error;
 }
-
+//comprueba el fichero del formulario formNoticias.php
 function comprobarFichero() {
   let error = false
   if ($('input[type="file"][name="imagen"]').val() == '') {
@@ -67,15 +72,15 @@ function comprobarFichero() {
   }
   return !error;
 }
-
+//para facilitar la llamada al toasSuccess genero esta funcion que recibe el mensaje y agrega el tipo de toast y el icono del toast de success
 function mostrarToastSuccess(mensaje) {
   mostrarToast('Success', 'success', mensaje)
 }
-
+//para facilitar la llamada al toasError genero esta funcion que recibe el mensaje y agrega el tipo de toast y el icono del toast de error
 function mostrarToastError(mensaje) {
   mostrarToast('Error', 'error', mensaje)
 }
-
+//He metido en una funcion generica que recibe el tipo, el icono y el mensaje, crear el toast. Con esto consigo tener en un solo punto la configuracion del toast
 function mostrarToast(tipo, icono, mensaje) {
   $.toast({
     heading: tipo,
@@ -86,24 +91,8 @@ function mostrarToast(tipo, icono, mensaje) {
   })
 }
 
-/*Valoración temarios por ajax*/
-function enviarValoracion(valoracion, temarioId) {
-  $.ajax({
-    data: {
-      "valoracion": valoracion,
-      "temarioId": temarioId
-    },
-    method: "POST",
-    url: "ajax/asignarValoracionTemario.php",
-    dataType: "json",
-  }).done(function (resultado) {
-    $('.valoracion').html('<div class="mensajeValoracion"><i style="color=green" class="far fa-thumbs-up"></i>¡Valorado correctamente con ' + valoracion + ' estrellas!</div>');
-    if ($('#numeroMedia').html() == 0) {
-      $('#numeroMedia').html(valoracion)
-    }
-  });
-}
 
+//se hace un control de páginas para la paginación
 function cargarHilos(event) {
   $('#paginacion span.numero.selected').removeClass("selected"); //borramos la seleccion anterior
   let paginaDestino = $(event.currentTarget).data('info');
@@ -131,4 +120,21 @@ function cargarHilos(event) {
     $('#hilos').html(resultado);
   });
 
+  /*Valoración temarios por ajax (controlar el tipo de valor que tiene cada estrella)*/
+  function enviarValoracion(valoracion, temarioId) {
+    $.ajax({
+      data: {
+        "valoracion": valoracion,
+        "temarioId": temarioId
+      },
+      method: "POST",
+      url: "ajax/asignarValoracionTemario.php",
+      dataType: "json",
+    }).done(function (resultado) {
+      $('.valoracion').html('<div class="mensajeValoracion"><i style="color=green" class="far fa-thumbs-up"></i>¡Valorado correctamente con ' + valoracion + ' estrellas!</div>');
+      if ($('#numeroMedia').html() == 0) {
+        $('#numeroMedia').html(valoracion)
+      }
+    });
+  }
 }

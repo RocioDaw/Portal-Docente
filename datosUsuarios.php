@@ -7,7 +7,7 @@
 <section class="buscarUsuario">
     <div class="paginaFormulario">
     <form class = 'buscarUsuarioFormulario' action = 'index.php?p=datosUsuarios' method = 'post' name = 'buscarUsuarioFormulario'>
-        <input type = 'inputBuscarUsuario' name = 'inputBuscarUsuario' placeholder = 'Busca un usuario' required>
+        <input type = 'inputBuscarUsuario' name = 'inputBuscarUsuario' placeholder = 'Busca un usuario'>
         <button type = 'submit' id = 'buscarUsuario' name = 'buscarUsuario' value = 'buscarUsuario'><i class = 'fas fa-search'></i></button>
     </form>
     </div>
@@ -15,8 +15,12 @@
 
 
 <?php
+
+$palabraABuscar = '';
 if ( isset( $_POST['buscarUsuario'] ) ) {
     $palabraABuscar = $_POST['inputBuscarUsuario'];
+}
+    
     $usuario = new Usuario();
     $usuario->getVerUsuariosEncontrados( $palabraABuscar);
     $cuantos=count($usuario->get_rows());
@@ -54,8 +58,6 @@ if ( isset( $_POST['buscarUsuario'] ) ) {
             <?php
         }
     }
-    
-}
 
 if(isset($_GET['b'])){
     $idUsuario = $_GET['b'];

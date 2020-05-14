@@ -28,9 +28,34 @@ button {
 
 .iniSesion {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 1%;
     text-align: right;
+}
+#fechaActual {
+    color: #ec4c4c;
+    font-family: arial;
+    text-shadow: 0px 0px 6px #ffb1b1, 0 0 0 #000;
+    border: 1px solid #ffcece;
+    padding: 5px;
+    align-self: flex-start;
+    border-radius: 2px;
+}
+.sessionIniciada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sessionIniciada .parteAvatar {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.sessionIniciada .parteOpciones {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sessionIniciada a{

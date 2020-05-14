@@ -40,7 +40,11 @@ $pdf->AddPage();
 $pdf->SetFont('Arial','B',12);
 $pdf->SetFillColor(255,255,255);
 
-
+$pdf->SetY(55);
+	$dia=date("d");
+	$mes=date("m");
+	$any=date("Y");	
+	$pdf->cell(0,20,"Dia $dia de $mes de $any ","0",1,"C");
 
 
 $pdf->cell(50,10,"ID","B",0,"L",1);
@@ -72,6 +76,7 @@ $temarios = new Temarios();
 
 $pdf->cell(100,10,"Temarios subidos por usuarios:  ",0,0,"L",1);
 $pdf->cell(50,10,$temarios-> getTotalTemarios(),0,0,"L",1);
+$pdf->Ln(20);
 
 $pdf->Output();
 ?>
