@@ -4,7 +4,7 @@
 <form action="index.php?p=formNoticias" onsubmit="return comprobarFichero()" method="post" name="formNoticias" enctype="multipart/form-data">
 <p>Añade una nueva noticia</p>
 <label for="titulo">TÍTULO:</label> <input type="text" name="titulo" id="titulo" placeholder="ESCRIBE EL TÍTULO DE LA NOTICIA"  autofocus required>  
-<label for="texto">TEXTO DE LA NOTICIA:</label> <textarea name="texto" id="texto" required></textarea>
+<label for="texto">TEXTO DE LA NOTICIA:</label> <textarea name="texto" id="texto" required minlength="100"></textarea>
 <input class="fichero" type="file" name="imagen" />
 <button type="submit" id="publicar" name="publicar" value="publicar">PUBLICAR</button>
 
@@ -48,7 +48,7 @@
 			            
 		
 	}
-        echo $msg;
+        
         
         
 ?>

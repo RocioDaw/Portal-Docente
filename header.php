@@ -83,6 +83,7 @@ if ( isset( $_GET['a'] ) ) {
     <?php } else {
         ?>
         <div class="sessionIniciada">
+            <div>
             <?php
             if($_SESSION['avatar']!=""){
             ?>
@@ -91,8 +92,10 @@ if ( isset( $_GET['a'] ) ) {
             }
             ?>
             <a href="index.php?p=alta&e=editar">Hola <?php echo ucfirst(strtolower($_SESSION['nombre']));?></a>
+            </div>
+            <div>
             <button class = 'botonHeader' type = 'submit' onclick = "location='index.php?a=logout'">Cerrar sesión</button>
-            
+            </div>
         </div>
 
         <?php 
@@ -129,6 +132,11 @@ if ( isset( $_GET['a'] ) ) {
         if(!isset($id_usuario)){
         ?>
         <li><a href = 'index.php?p=alta'>REGISTRARSE</a></li>
+        <?php
+        }
+        if(isset($id_usuario) && $_SESSION['tipo'] == "administrador"){
+        ?>
+        <li><a href = 'index.php?p=datosUsuarios'>DATOS USUARIOS</a></li>
         <?php
         }
         ?>

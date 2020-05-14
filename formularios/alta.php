@@ -86,11 +86,11 @@
                     if(is_uploaded_file($_FILES['avatar']['tmp_name'])){
                         $avatar= $destino.$id.".".$extension;
                         move_uploaded_file($_FILES['avatar']['tmp_name'],$avatar);
+                    }else{
+                        $avatar = $destino."avatar.png";
                     }
                     $usuario=new Usuario();
                     $usuario->editAvatar($id,$avatar);
-            }else{
-                echo "no existe";
             }
                         
         

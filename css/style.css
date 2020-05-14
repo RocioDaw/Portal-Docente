@@ -8,6 +8,8 @@
 /*css página temarios*/
 @import url('../css/foro.css');
 /*css página foro*/
+@import url('../css/datosUsuario.css');
+/*css página datosUsuario*/
 * {
     margin: 0;
     padding: 0;
@@ -267,7 +269,12 @@ footer hr {
 
     }
 
-    /*****************FOOTER************************************************************/
+    .sessionIniciada .imagenIniSesion{
+    width:68px;
+    padding:3px;
+    border:1px solid grey;
+    }
+
 
 
 }

@@ -53,7 +53,12 @@ if ( $opcion == 'foro') {
 if ( $opcion == 'mostrarHilo') {
     include( 'mostrarHilo.php');
 }
-
+if ( $opcion == 'datosUsuarios'){
+    include( 'datosUsuarios.php');
+}
+if ($opcion == 'exportarDatos'){
+    include('exportarDatos.php');
+}
 ?>
 
 <?php

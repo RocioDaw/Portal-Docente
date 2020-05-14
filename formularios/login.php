@@ -27,7 +27,7 @@ if ( isset( $_POST['entrar'] ) ) {
 
 <form action="index.php?p=login" method="post" name="altaUsuario">
 <h3>Introduce tu email y contraseña para iniciar sesión</h3>
-<label for="email">EMAIL:</label>  <input type="email" name="email" id="email" placeholder="ESCRIBE TU EMAIL" required> 
+<label for="email">EMAIL:</label>  <input type="email" name="email" id="email" placeholder="ESCRIBE TU EMAIL" required autofocus > 
 <label for="password">CONTRASEÑA: </label> <input type="password" name="password" placeholder="ESCRIBE TU CONTRASEÑA" required>
 
 <p class = 'mensaje'><?php echo $msg?></p>

@@ -58,6 +58,19 @@ class Usuario extends DBAbstractModel{
 		
 	}
 		
+	public function getAll(){
+		$this->query = "
+			SELECT *
+			FROM usuarios			
+			";
+			$this->get_results_from_query();
+	
+		if(count($this->rows) == 1):
+			foreach ($this->rows[0] as $propiedad=>$valor):
+				$this->$propiedad = $valor;
+			endforeach;
+		endif;
+	}
 	public function get($id='') { //buscar usuario por su id
 		if($id != ''){
 			$this->query = "
@@ -97,10 +110,10 @@ class Usuario extends DBAbstractModel{
 			";
         $this->execute_single_query();
     }
-	public function delete($email= '') {
+	public function delete($id= '') {
 		$this->query = "
 		DELETE FROM usuarios
-		WHERE email = '$email'
+		WHERE id = '$id'
 		";
 		$this->execute_single_query();
 		if($this->error==""){//si no hay error
@@ -110,7 +123,12 @@ class Usuario extends DBAbstractModel{
 		}
 	}
 	
-	
+	public function getVerUsuariosEncontrados( $palabraAbuscar) {
+        $this->query = "
+			select * from usuarios where nombre LIKE '%$palabraAbuscar%' OR apellidos LIKE '%$palabraAbuscar%' order by id desc  
+			";
+        $this->get_results_from_query();
+    }
 	
 
 }

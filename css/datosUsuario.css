@@ -1,0 +1,71 @@
+/*SECTION DATOS*/
+.datos{
+    height: 100px;
+    background-color: lightgrey;
+    font-family: Roboto;
+
+}
+.datos button{
+    background-color:  rgb(254, 154, 43);
+    color:white;
+    margin:0 auto;
+    text-decoration: none;
+    border:0;
+    border-radius: 5px;
+    width: 60%;
+    height: 25px;
+    padding:5px;
+}
+.datos div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+/*SECTION BUSCAR USUARIO*/
+.usuarioEncontrado{
+    display:grid;
+    grid-template-columns: 30% auto;
+    border:1px solid lightgrey;
+    box-shadow: 10px 10px 7px -5px rgba(158,139,158,1);
+    width:90%;
+    margin:12px auto;
+    border-radius: 5px;
+    font-family: Roboto;
+    padding: 13px;
+
+}
+.usuarioEncontrado img{
+    width: 80%;
+}
+
+.usuarioEncontrado a{
+    text-decoration: none;
+    color:white;
+    background-color: rgba(236, 76, 76);
+    padding:3px;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 1024px){
+    
+    .datos button{
+    width: 30%;
+    height: 32px;
+    padding: 8px;
+    font-size: 20px;
+    }
+
+    .usuarioEncontrado{
+   font-size:20px;
+
+}
+ .usuarioEncontrado p{
+   padding:6px;
+
+}
+}
