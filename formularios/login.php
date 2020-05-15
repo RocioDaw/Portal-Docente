@@ -16,7 +16,11 @@ if ( isset( $_POST['entrar'] ) ) {
         $_SESSION['tipo'] = $res[0]['tipo'];
         $_SESSION['avatar'] = $res[0]['avatar'];
         //identificamos al usuario y redireccionamos a inicio
-        header("Location:index.php");
+        ?>
+        <script>
+            window.location.href = "/";
+        </script>
+        <?php
     }
 
 }

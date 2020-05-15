@@ -43,9 +43,12 @@
             }    
            
         }
-        header("Location:index.php?p=noticias");
-        
-			            
+
+        ?>
+        <script>
+            window.location.href = "/index.php?p=noticias";
+        </script>
+        <?php
 		
 	}
         

@@ -103,10 +103,12 @@
             $_SESSION['avatar'] = $avatar;
 
             //redireccionamos al usuario identificado hacia inicio
-            header("Location:index.php");
+            ?>
+            <script>
+                window.location.href = "/";
+            </script>
+            <?php
             
-            
-			            
 		}else{
             $msg="Los password no coinciden";
         }

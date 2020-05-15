@@ -119,22 +119,22 @@ function cargarHilos(event) {
   }).done((resultado) => {
     $('#hilos').html(resultado);
   });
+}
 
-  /*Valoración temarios por ajax (controlar el tipo de valor que tiene cada estrella)*/
-  function enviarValoracion(valoracion, temarioId) {
-    $.ajax({
-      data: {
-        "valoracion": valoracion,
-        "temarioId": temarioId
-      },
-      method: "POST",
-      url: "ajax/asignarValoracionTemario.php",
-      dataType: "json",
-    }).done(function (resultado) {
-      $('.valoracion').html('<div class="mensajeValoracion"><i style="color=green" class="far fa-thumbs-up"></i>¡Valorado correctamente con ' + valoracion + ' estrellas!</div>');
-      if ($('#numeroMedia').html() == 0) {
-        $('#numeroMedia').html(valoracion)
-      }
-    });
-  }
+/*Valoración temarios por ajax (controlar el tipo de valor que tiene cada estrella)*/
+function enviarValoracion(valoracion, temarioId) {
+  $.ajax({
+    data: {
+      "valoracion": valoracion,
+      "temarioId": temarioId
+    },
+    method: "POST",
+    url: "ajax/asignarValoracionTemario.php",
+    dataType: "json",
+  }).done(function (resultado) {
+    $('.valoracion').html('<div class="mensajeValoracion"><i style="color=green" class="far fa-thumbs-up"></i>¡Valorado correctamente con ' + valoracion + ' estrellas!</div>');
+    if ($('#numeroMedia').html() == 0) {
+      $('#numeroMedia').html(valoracion)
+    }
+  });
 }
