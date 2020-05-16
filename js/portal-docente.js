@@ -39,10 +39,12 @@ function comprobarCamposRegistro() {
     mensaje = "Las dos contraseña no coinciden";
   }
   //con mostrarToastError generamos el toast con la plantilla de error y el mensaje que quiero que aparezca
-  mostrarToastError(mensaje)
+  if (error) {
+    mostrarToastError(mensaje)
+  }
   return !error;
 }
-//validar el formulario de añadirTemario.php
+//validar el formulario de anadirTemario.php
 function validarInsertarTemario() {
   let error = false
   let mensaje;
@@ -60,7 +62,9 @@ function validarInsertarTemario() {
     mensaje = "Debe introducir un archivo";
   }
 
-  mostrarToastError(mensaje)
+  if (error) {
+    mostrarToastError(mensaje)
+  }
   return !error;
 }
 //comprueba el fichero del formulario formNoticias.php

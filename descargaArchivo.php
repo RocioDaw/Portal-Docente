@@ -1,4 +1,4 @@
- <?php
+<?php
  require_once( 'clases/db_abstract_model.php' );
  require_once( 'clases/Temarios.php' );
  require_once( 'clases/Fichero.php' );
@@ -18,7 +18,6 @@
 header("Content-type: $tipo");
 header("Content-Disposition: attachment; filename=$nombreFichero");
 echo $fichero;
-
 
 }
 

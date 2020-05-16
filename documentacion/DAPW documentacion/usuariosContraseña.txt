@@ -1,0 +1,18 @@
+Registro usuarios
+
+usuario tipo Administrador:
+
+usuario: rociosorianorives@gmail.com
+contraseña: 1234
+
+Usuario normal:
+
+usuario: nayara@gmail.com
+contraseña: 4321
+
+
+
+URL pagina:
+
+https://portaldocente20.000webhostapp.com/
+

@@ -34,7 +34,7 @@ if ( $opcion == 'temarios' ) {
 }
 
 if ( $opcion == 'añadirTemario' ) {
-    include( 'formularios/añadirTemario.php' );
+    include( 'formularios/anadirTemario.php' );
 }
 
 if ( $opcion == 'mostrarTemario' ) {
